@@ -1,0 +1,10 @@
+<h1>Editing student</h1>
+
+<%= render "form", student: @student %>
+
+
+<div>
+  <%= link_to "Show this student", @student %>|
+  <%= link_to "Back to students", students_path %>
+  <%= link_to 'Delete', student_path(@student),data: { turbo_method: :delete ,turbo_confirm: 'Are you sure?' } %>
+</div>

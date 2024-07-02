@@ -1,0 +1,37 @@
+<div id="<%= dom_id student %>">
+  <%# <p>
+    <strong>Roll number: </strong>
+    <%= student.roll_number %>
+    <%# <strong>Name: </strong>
+    <%= student.name %>
+    <%# <strong>Email: </strong>
+    <%= student.email %>
+    <%# <strong>Phone number: </strong>
+    <%= student.phone_number %>
+  <%# </p> %> 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><strong>Roll number: </strong></th>
+        <th scope="col"><strong>Name: </strong></th>
+        <th scope="col"><strong>Email: </strong></th>
+        <th scope="col"><strong>Phone number: </strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= student.roll_number %></td>
+        <td><%= student.name %></td>
+        <td><%= student.email %></td>
+        <td><%= student.phone_number %></td>
+        <%# <td>
+          <%= link_to 'Show', student_path(student) %>
+          <%# <%= link_to 'Edit', edit_student_path(student) %> 
+          
+        <%# </td> %>
+      </tr>
+    </tbody>
+</table> 
+</div>
+
+</div>

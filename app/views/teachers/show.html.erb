@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @teacher %>
+
+<div class="container">
+  <%= link_to "Edit this teacher", edit_teacher_path(@teacher),class:"btn btn-primary" %> 
+  <%= link_to "Back to Teacher", teachers_path,class:"btn btn-secondary" %><br><br>
+
+  <%= button_to "Destroy this teacher", @teacher,data: { turbo_method: :delete ,turbo_confirm: 'Are you sure?' },class:"btn btn-danger"  %>
+</div>

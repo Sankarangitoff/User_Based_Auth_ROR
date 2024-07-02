@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Students</h1>
+
+<div id="students">
+  <table class="table table-bordered table-hover" >
+    <thead class="table-info">
+      <tr>
+        <th>Roll Number</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.roll_number %></td>
+          <td><%= student.name %></td>
+          <td><%= student.email %></td>
+          <td><%= student.phone_number %></td>
+          <td>
+            <% if can? :update, student %>
+              <%= link_to 'Edit', edit_student_path(student) %> |
+            <% end %>
+            <% if can? :destroy, student %>
+              <%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            <%= link_to 'Show', student %>
+        </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% if current_user.teacher? %>
+  <%= link_to "Create New Student", new_student_path, class: "btn btn-primary mb-2" %>
+<% end %>
+</div>
+
+ 

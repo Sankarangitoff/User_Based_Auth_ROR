@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Teachers</h1><br>
+
+<div id="students">
+  <table class="table table-bordered table-hover" >
+    <thead class="table-info">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Date_of_joining</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @teachers.each do |teacher| %>
+        <tr>
+          <td><%= teacher.name %></td>
+          <td><%= teacher.email %></td>
+          <td><%= teacher.phone_number %></td>
+          <td><%= teacher.Date_of_joining %></td>
+          <td><%= teacher.Salary %></td>
+          <td>
+            <%= link_to 'Show', teacher_path(teacher) %> | 
+            <%= link_to 'Edit', edit_teacher_path(teacher) %>
+           
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "Create New teacher", new_teacher_path,class:"btn btn-primary"  %><br><br>
+<%= link_to "Home", root_path,class:"btn btn-secondary"  %><br><br>
+ <%= link_to "Go_to students", students_path,class:"btn btn-secondary" %> 

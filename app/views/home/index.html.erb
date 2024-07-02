@@ -1,0 +1,9 @@
+<h1>Welcome to User based Authentication App </h1>
+<p>You are logged in as <%= current_user.email %></p>
+
+<% if current_user.teacher? %>
+  <%= link_to 'Manage Students', students_path %>
+    
+<% elsif current_user.student? %>
+  <%= link_to 'View Students', students_path %>
+<% end %>

@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+  <p>
+    <strong>Roll number: </strong>
+    <%= @student.roll_number %>
+   <p> <strong>Name: </strong>
+    <%= @student.name %>
+  </p>
+  <p>
+    <strong>Email: </strong>
+    <%= @student.email %>
+  </p>
+  <p>
+    <strong>Phone number: </strong>
+    <%= @student.phone_number %>
+  </p> 
+<br>
+
+<div class="container">
+  <%= link_to "Edit student", edit_student_path(@student),class:"btn btn-secondary" %>  
+  <%= link_to "Back to students", students_path,class:"btn btn-secondary" %> 
+  <%= link_to "Destroy this student", @student, data: { turbo_method: :delete ,turbo_confirm: 'Are you sure?' },class:"btn btn-danger" %>
+</div>
